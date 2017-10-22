@@ -1,8 +1,0 @@
-version: '2'
-
-services:
-  playground:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: playground:latest
