@@ -4,7 +4,7 @@ A Docker Image with multiple languages installed.  Useful as an alternative to c
 ## Getting Started
 1) Clone the repository with `git clone https://github.com/programming-liftoff/docker-playground.git`
 2) cd into the directory by typing `cd docker-playground/`
-3) Build the image by typing `docker-compose build`
+3) Build the image by typing `docker build -t playground:latest .`
 4) Start a bash shell in the container by typing `docker run --rm -it playground`
 
 ## Additional Notes
