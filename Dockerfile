@@ -74,6 +74,14 @@ ENV PATH="${PATH}:/usr/local/go/bin"
 #===================
 RUN echo root:$rootpassword | chpasswd
 
+#================
+# Set ENTRYPOINT
+# Copy entry_point file and make it executable.
+#=================
+COPY ./entry_point.sh /
+RUN chmod 744 /entry_point.sh
+ENTRYPOINT ["/entry_point.sh"]
+
 #==================
 # Set default user
 # 1) Set the default user when the container starts
@@ -81,7 +89,3 @@ RUN echo root:$rootpassword | chpasswd
 #==================
 USER $username
 WORKDIR /home/$username
-
-# TODO: `chmod 744 entry_point.sh` or `chmod +x entry_point.sh` on file
-COPY ./entry_point.sh /
-ENTRYPOINT ["/entry_point.sh"]
