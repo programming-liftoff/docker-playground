@@ -35,6 +35,7 @@ RUN apt-get install -y --no-install-recommends apt-utils
 #  - make
 #================
 RUN apt-get install -y sudo
+RUN apt-get install -y curl
 RUN apt-get install -y build-essential
 RUN apt-get install -y nano
 
@@ -52,8 +53,7 @@ RUN apt-get install -y python3 && \
 #================
 # Ruby (via RVM)
 #================
-RUN apt-get install -y curl && \
-    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB && \
+RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB && \
     \curl -L https://get.rvm.io | bash -s stable --ruby && \
     adduser $username rvm
 
