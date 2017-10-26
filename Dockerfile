@@ -38,6 +38,7 @@ RUN apt-get install -y sudo
 RUN apt-get install -y curl
 RUN apt-get install -y build-essential
 RUN apt-get install -y nano
+RUN apt-get install -y git
 
 #===========================================================================
 # Install Programming Languages. Add or remove languages as desired.
