@@ -17,4 +17,4 @@ ENV rootpassword toor
 ```
 
 When the container loads a shell, it will load to user `andrew`, with the password set to `pass`.  The password for the root user is set to `toor`.
-If you wish to change these values, simply change them in this one place and rebuild the image with `docker-compose build` to update the container's settings.
+If you wish to change these values, simply change them in this one place and rebuild the image with `docker build -t playground:latest .` to update the container's settings.
