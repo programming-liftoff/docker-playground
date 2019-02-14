@@ -80,7 +80,7 @@ RUN echo root:$rootpassword | chpasswd
 # Copy entry_point file and make it executable.
 #=================
 COPY ./entry_point.sh /
-RUN chmod 744 /entry_point.sh
+RUN ["chmod", "+x", "/entry_point.sh"]
 ENTRYPOINT ["/entry_point.sh"]
 
 #==================
