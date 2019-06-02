@@ -39,6 +39,7 @@ RUN apt-get install -y curl
 RUN apt-get install -y build-essential
 RUN apt-get install -y nano
 RUN apt-get install -y git
+RUN apt-get install -y vim
 
 #===========================================================================
 # Install Programming Languages. Add or remove languages as desired.
@@ -80,7 +81,7 @@ RUN echo root:$rootpassword | chpasswd
 # Copy entry_point file and make it executable.
 #=================
 COPY ./entry_point.sh /
-RUN chmod 744 /entry_point.sh
+RUN ["chmod", "+x", "/entry_point.sh"]
 ENTRYPOINT ["/entry_point.sh"]
 
 #==================
